@@ -63,13 +63,13 @@ public:
 		dist.at(a) = 0;
 		priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
 		pq.push(make_pair(0, a));
-		vector<int> path;
 		while (!pq.empty()) {
 			pair<int, int> p = pq.top();
 			pq.pop();
 			int id = p.second, w = p.first;
 			visited.at(id) = true;
 			if (id == b) {
+				vector<int> path;
 				while (id != a) {
 					path.push_back(id + 1);
 					id = parent.at(id);
