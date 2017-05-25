@@ -32,9 +32,13 @@ In the first example: you can choose "defgh" from string b as it is the longest 
 #include <bits/stdc++.h>
 using namespace std;
 
+int solver(const string& a, const string& b) {
+	return a == b ? -1 : max(a.size(), b.size());
+}
+
 int main(void) {
 	string a, b;
 	cin >> a >> b;
-	cout << (a == b ? -1 : max(a.size(), b.size()));
+	cout << solver(a, b) << '\n';
 	return 0;
 }
